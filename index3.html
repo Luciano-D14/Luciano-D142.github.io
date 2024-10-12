@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <header>
+        <h1>Bienvenido a Mi Página</h1>
+        <button id="toggleTheme" class="theme-toggle">Cambiar a Tema Oscuro</button>
+        <div class="dropdown">
+            <button class="dropbtn" id="menuToggle">Menú</button>
+            <div class="dropdown-content" id="dropdownContent">
+                <button onclick="selectMenuItem(this, 'sobre-mi.html')" class="menu-button">Sobre Mí</button>
+                <button onclick="selectMenuItem(this, 'proyectos.html')" class="menu-button">Proyectos</button>
+                <button onclick="selectMenuItem(this, 'contacto.html')" class="menu-button">Contacto</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <p>Esta es una breve descripción sobre mí.</p>
+        </section>
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <p>Aquí puedes ver mis proyectos recientes.</p>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través de mi correo electrónico.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Nombre. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
