@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>                                                                                                                                                                                  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="showSection('inicio')">Inicio</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('tutoriales')">Tutoriales</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('links')">Links</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="section-content">
+        <header>
+            <h1>Mi primera página para Minecraft</h1>
+            <h2>Bienvenido a mi página</h2>
+        </header>
+        <main>
+            <h1>Página de Inicio</h1>
+            <h2>No hay nada aquí por ahora, ¡pero pronto habrá más!</h2>
+        </main>
+    </section>
+
+    <!-- Sección de Tutoriales -->
+    <section id="tutoriales" class="section-content" style="display:none;">
+        <header>
+            <h1>Bienvenido a mi página de Tutoriales</h1>
+        </header>
+        <main>
+            <h2>Página de Tutoriales</h2>
+            <h3>Aprende a configurar y optimizar Minecraft</h3>
+            
+            <!-- Sección de Videos (Nueva) -->
+            <div class="video-section">
+                <h3 class="video-title" contenteditable="true">Tutorial: Cómo usar mi launcher de mcXP</h3>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7lQxQkJdZj0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </main>
+    </section>
+
+    <!-- Sección de Links -->
+    <section id="links" class="section-content" style="display:none;">
+        <header>
+            <h1>Bienvenido a mi página de Links</h1>
+        </header>
+        <main>
+            <h2>Accede a los archivos y recursos descargables:</h2>
+            <div class="links-container">
+                <a href="https://www.mediafire.com/file/isiijo591cvdf38/config%252Bresourse_pack_v1.5.rar/file" target="_blank" class="btn">Config + Resource Pack 1.16.5</a>
+                <a href="https://www.mediafire.com/file/dwfyk5k6etm01a9/modpack_optimizado_1.20.4.zip/file" target="_blank" class="btn">Modpack Optimizado 1.20.4</a>
+                <a href="https://www.mediafire.com/file/qz55hj11bci5p99/modpack_1.21.1.zip/file" target="_blank" class="btn">Modpack Optimizado 1.21.1 "Beta"</a>
+                <a href="https://www.mediafire.com/file/iuouhywbhb7buu8/MinecraftXP.zip/file" target="_blank" class="btn">MinecraftXP Launcher</a>
+            </div>
+        </main>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Función para mostrar las secciones
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => section.style.display = 'none');
+            
+            // Mostrar la sección correspondiente
+            const activeSection = document.getElementById(sectionId);
+            activeSection.style.display = 'block';
+        }
+
+        // Al cargar la página, mostrar la sección "inicio" por defecto
+        window.onload = function() {
+            showSection('inicio');
+        };
+
+        // Menú hamburguesa
+        const menuToggle = document.getElementById('mobile-menu');
+        const navbar = document.querySelector('.navbar');
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

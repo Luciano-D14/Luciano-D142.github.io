@@ -1,0 +1,207 @@
+/* Estilos generales para la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a6c1ee, #fbc2eb, #d4a5a5, #c1f7f5, #f0e6fa); /* Fondo gradiente suave sin naranja */
+    background-size: 400% 400%; /* Hace que el gradiente se mueva */
+    animation: gradientBackground 15s ease infinite; /* Animación para mover el fondo */
+    color: #333; /* Color de texto oscuro para contraste */
+    line-height: 1.6;
+}
+
+/* Animación de fondo (gradiente que se mueve lentamente) */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilo del header */
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #fff;
+}
+
+/* Menú de navegación */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    overflow: hidden;
+    position: relative;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #8e44ad; /* Color morado suave */
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Estilos para el menú hamburguesa en móviles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.menu-toggle span {
+    display: block;
+    background-color: white;
+    height: 4px;
+    width: 25px;
+    margin: 5px auto;
+}
+
+.navbar.active ul {
+    display: block;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar.active ul {
+    display: block;
+    text-align: center;
+}
+
+/* Botones llamativos */
+.btn {
+    background-color: #6fc1b1; /* Color verde menta suave */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #4ecfa7; /* Verde menta más intenso */
+    transform: scale(1.05);
+}
+
+/* Secciones */
+.section-content {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.links-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.links-container .btn {
+    margin-top: 20px;
+}
+
+/* Media Queries para hacer el diseño responsivo */
+
+/* Para pantallas grandes (desktops, laptops) */
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+    .navbar ul li {
+        margin: 0 20px;
+    }
+    .btn {
+        font-size: 1.3em;
+        padding: 18px 40px;
+    }
+}
+
+/* Para tabletas y dispositivos con pantalla más pequeña */
+@media screen and (max-width: 1024px) {
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+    }
+    .navbar ul li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .btn {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+}
+
+/* Para móviles pequeños (como iPhone y Android) */
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Ocultamos el menú en dispositivos pequeños */
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar.active ul {
+        display: block; /* Mostramos el menú cuando se activa */
+    }
+
+    .menu-toggle {
+        display: block; /* Activamos el botón de menú hamburguesa */
+    }
+
+    .navbar ul li {
+        display: block;
+        width: 100%;
+    }
+
+    .btn {
+        font-size: 1.2em;
+        padding: 12px 30px;
+        width: 80%;
+        margin-top: 10px;
+    }
+}
+
+/* Para pantallas extra pequeñas (móviles muy pequeños como en 320px) */
+@media screen and (max-width: 320px) {
+    .navbar ul li a {
+        font-size: 1.1em; /* Hacemos el texto del menú más pequeño */
+    }
+
+    .btn {
+        font-size: 1.1em;
+        padding: 12px 25px;
+        margin-top: 8px;
+    }
+}
