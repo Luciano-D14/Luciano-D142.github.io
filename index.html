@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>                                                                                                                                                                                  
+    <title>Mi Página Web</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -43,14 +43,13 @@
             <h2>Página de Tutoriales</h2>
             <h3>Aprende a configurar y optimizar Minecraft</h3>
             
-            <!-- Sección de Videos (Nueva) -->
+            <!-- Sección de Videos -->
             <div class="video-section">
                 <h3 class="video-title" contenteditable="true">Tutorial: Cómo usar mi launcher de mcXP</h3>
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/7lQxQkJdZj0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-
         </main>
     </section>
 
@@ -77,23 +76,17 @@
 
     <!-- Scripts -->
     <script>
-        // Función para mostrar las secciones
         function showSection(sectionId) {
-            // Ocultar todas las secciones
             const sections = document.querySelectorAll('.section-content');
             sections.forEach(section => section.style.display = 'none');
-            
-            // Mostrar la sección correspondiente
             const activeSection = document.getElementById(sectionId);
             activeSection.style.display = 'block';
         }
 
-        // Al cargar la página, mostrar la sección "inicio" por defecto
         window.onload = function() {
             showSection('inicio');
         };
 
-        // Menú hamburguesa
         const menuToggle = document.getElementById('mobile-menu');
         const navbar = document.querySelector('.navbar');
         menuToggle.addEventListener('click', () => {

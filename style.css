@@ -1,16 +1,17 @@
 /* Estilos generales para la página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #a6c1ee, #fbc2eb, #d4a5a5, #c1f7f5, #f0e6fa); /* Fondo gradiente suave sin naranja */
-    background-size: 400% 400%; /* Hace que el gradiente se mueva */
-    animation: gradientBackground 15s ease infinite; /* Animación para mover el fondo */
-    color: #333; /* Color de texto oscuro para contraste */
+    background: linear-gradient(135deg, #a6c1ee, #fbc2eb, #d4a5a5, #c1f7f5, #f0e6fa);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    color: #333;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Animación de fondo (gradiente que se mueve lentamente) */
+/* Animación de fondo */
 @keyframes gradientBackground {
     0% {
         background-position: 0% 50%;
@@ -25,7 +26,7 @@ body {
 
 /* Estilo del header */
 header {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 20px;
     text-align: center;
@@ -34,9 +35,15 @@ header {
 
 /* Menú de navegación */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro para que contraste mejor */
     overflow: hidden;
-    position: relative;
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Asegura que el menú esté por encima del contenido */
+    padding: 10px 0;
+    transition: top 0.3s; /* Transición para suavizar el movimiento */
 }
 
 .navbar ul {
@@ -60,12 +67,12 @@ header {
 }
 
 .navbar ul li a:hover {
-    background-color: #8e44ad; /* Color morado suave */
+    background-color: #8e44ad;
     color: white;
     transform: scale(1.1);
 }
 
-/* Estilos para el menú hamburguesa en móviles */
+/* Menú hamburguesa */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -100,7 +107,7 @@ header {
 
 /* Botones llamativos */
 .btn {
-    background-color: #6fc1b1; /* Color verde menta suave */
+    background-color: #6fc1b1;
     color: white;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -109,11 +116,30 @@ header {
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
-    background-color: #4ecfa7; /* Verde menta más intenso */
+    background-color: #4ecfa7;
     transform: scale(1.05);
+}
+
+/* Estilo de video */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Secciones */
@@ -121,8 +147,10 @@ header {
     display: none;
     padding: 20px;
     text-align: center;
+    margin-top: 70px; /* Para asegurar que el contenido no quede cubierto por el menú fijo */
 }
 
+/* Links */
 .links-container {
     text-align: center;
     margin-top: 30px;
@@ -134,7 +162,7 @@ header {
 
 /* Media Queries para hacer el diseño responsivo */
 
-/* Para pantallas grandes (desktops, laptops) */
+/* Para pantallas grandes */
 @media screen and (min-width: 1024px) {
     body {
         font-size: 18px;
@@ -148,7 +176,7 @@ header {
     }
 }
 
-/* Para tabletas y dispositivos con pantalla más pequeña */
+/* Para tabletas y dispositivos medianos */
 @media screen and (max-width: 1024px) {
     .navbar ul {
         display: flex;
@@ -164,20 +192,20 @@ header {
     }
 }
 
-/* Para móviles pequeños (como iPhone y Android) */
+/* Para móviles pequeños */
 @media screen and (max-width: 768px) {
     .navbar ul {
-        display: none; /* Ocultamos el menú en dispositivos pequeños */
+        display: none;
         width: 100%;
         text-align: center;
     }
 
     .navbar.active ul {
-        display: block; /* Mostramos el menú cuando se activa */
+        display: block;
     }
 
     .menu-toggle {
-        display: block; /* Activamos el botón de menú hamburguesa */
+        display: block;
     }
 
     .navbar ul li {
@@ -193,10 +221,10 @@ header {
     }
 }
 
-/* Para pantallas extra pequeñas (móviles muy pequeños como en 320px) */
+/* Para pantallas muy pequeñas */
 @media screen and (max-width: 320px) {
     .navbar ul li a {
-        font-size: 1.1em; /* Hacemos el texto del menú más pequeño */
+        font-size: 1.1em;
     }
 
     .btn {
