@@ -25,6 +25,7 @@
     <!-- Sección de Inicio -->
     <section id="inicio" class="section-content">
         <header>
+            <!-- Eliminamos el texto en negrita aquí -->
             <h1>Mi primera página para Minecraft</h1>
             <h2>Bienvenido a mi página</h2>
         </header>
@@ -37,6 +38,7 @@
     <!-- Sección de Tutoriales -->
     <section id="tutoriales" class="section-content" style="display:none;">
         <header>
+            <!-- Eliminamos el texto en negrita aquí -->
             <h1>Bienvenido a mi página de Tutoriales</h1>
         </header>
         <main>
@@ -57,6 +59,7 @@
     <!-- Sección de Links -->
     <section id="links" class="section-content" style="display:none;">
         <header>
+            <!-- Eliminamos el texto en negrita aquí -->
             <h1>Bienvenido a mi página de Links</h1>
         </header>
         <main>
@@ -79,16 +82,12 @@
     <script>
         // Función para mostrar las secciones
         function showSection(sectionId) {
-            // Ocultar todas las secciones
             const sections = document.querySelectorAll('.section-content');
             sections.forEach(section => section.style.display = 'none');
-            
-            // Mostrar la sección correspondiente
             const activeSection = document.getElementById(sectionId);
             activeSection.style.display = 'block';
         }
 
-        // Al cargar la página, mostrar la sección "inicio" por defecto
         window.onload = function() {
             showSection('inicio');
         };
@@ -101,4 +100,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
