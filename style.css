@@ -108,7 +108,7 @@ header {
 
 /* Botones llamativos */
 .btn {
-    background-color: #6fc1b1;
+    background-color: #1366b3;
     color: white;
     text-decoration: none;
     padding: 15px 30px;
@@ -120,7 +120,7 @@ header {
 }
 
 .btn:hover {
-    background-color: #5bb09e;
+    background-color: #0565f5;
     transform: translateY(-5px); /* Eleva el botón al hacer hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
@@ -146,8 +146,8 @@ header {
 /* Estilo de video */
 .video-container {
     position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* Proporción 16:9 */
+    width: 50%;
+    padding-top: 30%; /* Ajuste de la proporción para reducir el alto */
     height: 0;
     overflow: hidden;
     margin: 20px auto;
@@ -163,6 +163,7 @@ header {
     height: 100%;
     border-radius: 10px;
 }
+
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 768px) {
